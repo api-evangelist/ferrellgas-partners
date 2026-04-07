@@ -1,7 +1,12 @@
 aid: ferrellgas-partners
-url: https://raw.githubusercontent.com/api-evangelist/ferrellgas-partners/refs/heads/main/apis.yml
+url: 
+  https://raw.githubusercontent.com/api-evangelist/ferrellgas-partners/refs/heads/main/apis.yml
 modified: '2026-03-24'
 apis: []
 common:
   - type: Website
     url: https://www.ferrellgas-partners.com
+description: >-
+  Ferrellgas Partners is a propane distributor in the United States, providing propane
+  to residential, industrial, commercial, portable tank exchange, agricultural, wholesale,
+  and other customers.

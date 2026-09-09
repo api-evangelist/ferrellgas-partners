@@ -1,9 +1,15 @@
 aid: ferrellgas-partners
 name: Ferrellgas Partners
 description: >-
-  Ferrellgas Partners is one of the largest propane distributors in the United
-  States, providing propane to residential, industrial, commercial, portable
-  tank exchange (Blue Rhino), agricultural, wholesale, and other customers.
+  Ferrellgas Partners, L.P. (FGPR) is one of the largest propane distributors in the United
+  States, selling and delivering propane to residential, commercial, industrial, agricultural,
+  wholesale and portable tank exchange customers from a nationwide network of district
+  locations, and operating the Blue Rhino propane tank exchange brand. Its digital surface is
+  customer-facing rather than developer-facing: MyFerrellgas (myferrellgas.com) is an Angular
+  single-page account portal backed by a private backend-for-frontend at bff.myferrellgas.com
+  with Amazon Cognito sign-in, and api.ferrellgas.com resolves in DNS but answers every
+  anonymous request with HTTP 503. As of this enrichment pass Ferrellgas publishes no developer
+  program, no API documentation, no SDKs and no machine-readable API contract.
 type: Index
 deliveryModel:
   model: unknown
@@ -34,8 +40,13 @@ tags:
   - Energy
   - Propane
   - Distribution
+  - Fuel
+  - Logistics
+  - Retail
+  - Utilities
+  - Company
 created: '2026-03-24'
-modified: '2026-04-28'
+modified: '2026-09-09'
 url: >-
   https://raw.githubusercontent.com/api-evangelist/ferrellgas-partners/refs/heads/main/apis.yml
 specificationVersion: '0.23'
@@ -43,10 +54,54 @@ apis: []
 common:
   - type: DomainSecurity
     url: security/ferrellgas-partners-domain-security.yml
-  - type: LinkedIn
-    url: https://www.linkedin.com/company/ferrellgas-partners-lp
   - type: Website
     url: https://www.ferrellgas.com
+  - type: Blog
+    url: https://www.ferrellgas.com/tank-talk/
+  - type: Support
+    url: https://www.ferrellgas.com/customer-support/
+  - type: PrivacyPolicy
+    url: https://www.ferrellgas.com/privacy-policy/
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/ferrellgas-partners-lp
+  - type: Twitter
+    url: https://twitter.com/ferrellgas
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
+x-tier: profiled
+x-tier-reason: >-
+  enrichment pass 2026-09-09: full STEP 0b contract discovery run against every known host, no
+  public API surface found
+x-enrichment:
+  date: '2026-09-09'
+  status: minimal
+  artifacts_added: 1
+  pass: local-v3
+x-coverage:
+  state: none
+  reason: not-a-software-company
+  detail: >-
+    Ferrellgas sells and delivers propane, not software: www.ferrellgas.com and the Blue Rhino
+    brand site are Sitecore marketing sites with no /docs, /api-docs or /developers path and a
+    true 404 on every discovery path, and the only API infrastructure the company runs —
+    api.ferrellgas.com, which answers every anonymous request with HTTP 503, and
+    bff.myferrellgas.com, the private backend-for-frontend behind the MyFerrellgas Angular
+    account portal — is internal plumbing for its own customer app, with no published contract,
+    no reference and no developer program of any kind.
+  evidence:
+    - url: https://www.ferrellgas.com/openapi.json
+      status: 404
+    - url: https://www.ferrellgas.com/api-docs
+      status: 404
+    - url: https://www.ferrellgas.com/.well-known/api-catalog
+      status: 404
+    - url: https://bluerhino.com/openapi.json
+      status: 404
+    - url: https://api.ferrellgas.com/
+      status: 503
+    - url: https://bff.myferrellgas.com/
+      status: 404
+    - url: https://api.github.com/orgs/ferrellgas/repos
+      status: 200
+  checked: '2026-09-09'

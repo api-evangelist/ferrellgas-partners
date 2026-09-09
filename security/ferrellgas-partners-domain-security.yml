@@ -1,11 +1,11 @@
-generated: '2026-07-11'
+generated: '2026-09-09'
 method: probed
 source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
 hosts:
 - host: www.ferrellgas.com
   https: true
   tls_version: TLSv1.3
-  cert_expires: Oct  1 18:58:32 2026 GMT
+  cert_expires: Nov 29 22:09:07 2026 GMT
   hsts: true
   hsts_max_age: 2592000
 domains:
@@ -13,5 +13,18 @@ domains:
   dnssec: false
   caa: []
   spf: true
+  spf_record: v=spf1 include:%{ir}.%{v}.%{d}.spf.has.pphosted.com -all
   dmarc: true
-  dmarc_policy: none
+  dmarc_policy: reject
+x-probe-notes:
+- >-
+  SPF corrected by hand after verification. ferrellgas.com publishes seven TXT records, and the
+  answer exceeds what a single UDP query returns here, so the shared probe's
+  `dig +short +time=2 +tries=1 TXT` call times out and records spf: false. Re-queried three
+  times over UDP (all timed out, rc=9) and once with `dig +short +tcp TXT ferrellgas.com`,
+  which returns "v=spf1 include:%{ir}.%{v}.%{d}.spf.has.pphosted.com -all". The SPF record is
+  present; the false is a probe artifact, not a provider gap.
+- >-
+  Mail is on Proofpoint Email Protection — the SPF record uses the pphosted.com macro form and
+  _dmarc.ferrellgas.com is CNAME'd to _dmarc.ferrellgas.com.dmarc.has.pphosted.com, which
+  answers p=reject with Proofpoint rua/ruf addresses.

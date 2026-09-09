@@ -1,0 +1,265 @@
+generated: '2026-09-09'
+method: probed
+source: live GET of the named /.well-known/ path list on every host this record knows
+hit_count: 0
+note: >-
+  No discovery document was served on any Ferrellgas-controlled host. The two Sitecore
+  marketing sites (www.ferrellgas.com and the Blue Rhino brand site bluerhino.com) return a
+  true 404 for every named path, including the negative control, so those are real absences.
+  api.ferrellgas.com resolves in DNS but answers every anonymous request — root included —
+  with HTTP 503 "Service Unavailable", so nothing can be read from it. myferrellgas.com is an
+  Angular single-page app whose edge answers 200 with the SAME 3,926-byte HTML shell for every
+  path, the negative control included (identical SHA1 across all 16 probes): that host is a
+  catch-all and its 200s are NOT documents. Consequently NO WellKnown and NO SecurityTxt
+  pointer is emitted — this file records an absence, not a served surface.
+hosts:
+- host: https://www.ferrellgas.com
+  path_echo_control: passed
+  soft_404_control: passed
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/api-catalog.json
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/apis.json
+    status: 404
+  - path: /.well-known/ucp.json
+    status: 404
+  - path: /.well-known/acp.json
+    status: 404
+  - path: /.well-known/aauth-resource.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /apis.json
+    status: 404
+  - path: /apis.yml
+    status: 404
+  - path: /.well-known/apis-io-negative-control-7f3ab91c.json
+    status: 404
+    control: true
+- host: https://ferrellgas.com
+  path_echo_control: passed
+  soft_404_control: passed
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/api-catalog.json
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/apis.json
+    status: 404
+  - path: /.well-known/ucp.json
+    status: 404
+  - path: /.well-known/acp.json
+    status: 404
+  - path: /.well-known/aauth-resource.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /apis.json
+    status: 404
+  - path: /apis.yml
+    status: 404
+  - path: /.well-known/apis-io-negative-control-7f3ab91c.json
+    status: 404
+    control: true
+- host: https://bluerhino.com
+  note: Blue Rhino, the portable propane tank exchange brand Ferrellgas owns and operates.
+  path_echo_control: passed
+  soft_404_control: passed
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/api-catalog.json
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/apis.json
+    status: 404
+  - path: /.well-known/ucp.json
+    status: 404
+  - path: /.well-known/acp.json
+    status: 404
+  - path: /.well-known/aauth-resource.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /apis.json
+    status: 404
+  - path: /apis.yml
+    status: 404
+  - path: /.well-known/apis-io-negative-control-7f3ab91c.json
+    status: 404
+    control: true
+- host: https://api.ferrellgas.com
+  note: >-
+    Resolves to 12.148.111.49 but returns HTTP 503 "Http/1.1 Service Unavailable" (62-byte
+    HTML body) for every path including the root. Nothing anonymous can be read from this host;
+    the 503s are neither hits nor confirmed absences.
+  path_echo_control: not-applicable
+  soft_404_control: not-applicable
+  documents:
+  - path: /.well-known/security.txt
+    status: 503
+  - path: /.well-known/openid-configuration
+    status: 503
+  - path: /.well-known/oauth-authorization-server
+    status: 503
+  - path: /.well-known/oauth-protected-resource
+    status: 503
+  - path: /.well-known/api-catalog
+    status: 503
+  - path: /.well-known/api-catalog.json
+    status: 503
+  - path: /.well-known/ai-plugin.json
+    status: 503
+  - path: /.well-known/apis.json
+    status: 503
+  - path: /.well-known/ucp.json
+    status: 503
+  - path: /.well-known/acp.json
+    status: 503
+  - path: /.well-known/aauth-resource.json
+    status: 503
+  - path: /.well-known/agent-card.json
+    status: 503
+  - path: /.well-known/agent.json
+    status: 503
+  - path: /apis.json
+    status: 503
+  - path: /apis.yml
+    status: 503
+  - path: /.well-known/apis-io-negative-control-7f3ab91c.json
+    status: 503
+    control: true
+- host: https://myferrellgas.com
+  note: >-
+    CATCH-ALL. Every path returns HTTP 200 with the identical 3,926-byte Angular app shell
+    (SHA1 f3b310c963 on all 16 probes, negative control included). These 200s are SPA routing,
+    not documents, so no document is recorded and no pointer is emitted from this host.
+  path_echo_control: failed
+  soft_404_control: failed
+  soft_404_bytes: 3926
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    document: false
+    reason: spa-shell
+  - path: /.well-known/openid-configuration
+    status: 200
+    document: false
+    reason: spa-shell
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    document: false
+    reason: spa-shell
+  - path: /.well-known/oauth-protected-resource
+    status: 200
+    document: false
+    reason: spa-shell
+  - path: /.well-known/api-catalog
+    status: 200
+    document: false
+    reason: spa-shell
+  - path: /.well-known/api-catalog.json
+    status: 200
+    document: false
+    reason: spa-shell
+  - path: /.well-known/ai-plugin.json
+    status: 200
+    document: false
+    reason: spa-shell
+  - path: /.well-known/apis.json
+    status: 200
+    document: false
+    reason: spa-shell
+  - path: /.well-known/ucp.json
+    status: 200
+    document: false
+    reason: spa-shell
+  - path: /.well-known/acp.json
+    status: 200
+    document: false
+    reason: spa-shell
+  - path: /.well-known/aauth-resource.json
+    status: 200
+    document: false
+    reason: spa-shell
+  - path: /.well-known/agent-card.json
+    status: 200
+    document: false
+    reason: spa-shell
+  - path: /.well-known/agent.json
+    status: 200
+    document: false
+    reason: spa-shell
+  - path: /apis.json
+    status: 200
+    document: false
+    reason: spa-shell
+  - path: /apis.yml
+    status: 200
+    document: false
+    reason: spa-shell
+  - path: /.well-known/apis-io-negative-control-7f3ab91c.json
+    status: 200
+    document: false
+    reason: spa-shell
+    control: true
+- host: https://bff.myferrellgas.com
+  note: >-
+    The backend-for-frontend the MyFerrellgas app is configured to call (named in
+    myferrellgas.com/assets/scripts/env.v5.js). It is a real, live host behind Cloudflare, but
+    it returns 404 at the root and on every discovery path — no landing page, no spec, no
+    metadata. It is a private application backend, not a published API.
+  path_echo_control: passed
+  soft_404_control: passed
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+x-related-auth-server:
+  note: >-
+    NOT a Ferrellgas-served document, recorded as evidence only. The MyFerrellgas app signs in
+    against an Amazon Cognito user pool (us-east-1_A9hnJHnm4), whose OIDC discovery document
+    returns HTTP 200 at cognito-idp.us-east-1.amazonaws.com. The pool is Ferrellgas' tenant but
+    the document is served by AWS on an AWS host, so it earns Ferrellgas no WellKnown pointer.
+  url: https://cognito-idp.us-east-1.amazonaws.com/us-east-1_A9hnJHnm4/.well-known/openid-configuration
+  status: 200

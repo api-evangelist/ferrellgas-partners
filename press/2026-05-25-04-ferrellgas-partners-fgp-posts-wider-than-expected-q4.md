@@ -1,7 +1,9 @@
 ---
 title: Ferrellgas Partners (FGP) Posts Wider-Than-Expected Q4 ...
 url: https://finance.yahoo.com/news/ferrellgas-partners-fgp-posts-wider-133201557.html
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Ferrellgas Partners" press release artificial intelligence'
 position: 4
 source: serpapi-google
